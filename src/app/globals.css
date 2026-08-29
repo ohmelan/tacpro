@@ -1,0 +1,74 @@
+@import "tailwindcss";
+:root {
+  --color-ink: #12130f;
+  --color-ink-raised: #1c1e17;
+  --color-ink-fg: #f6f7ef;
+  --color-ink-fg-secondary: #b9bcaa;
+  --color-ink-fg-dim: #8c8f7e;
+  --color-canvas: #fafaf7;
+  --color-canvas-raised: #ffffff;
+  --color-canvas-fg: #12130f;
+  --color-canvas-fg-secondary: #55584a;
+  --color-canvas-fg-dim: #6e7160;
+  --color-brand: #D5AF54;
+  --color-brand-deep: #521421;
+  --color-brand-soft: #f4ebce;
+  --color-brand-line: rgba(213, 175, 84, 0.3);
+  --color-success: #3f7a2e;
+  --color-success-soft: #e4f3db;
+  --color-attention: #b4460e;
+  --color-attention-soft: #fbe6d8;
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+}
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-raised: var(--color-ink-raised);
+  --color-ink-fg: var(--color-ink-fg);
+  --color-ink-fg-secondary: var(--color-ink-fg-secondary);
+  --color-ink-fg-dim: var(--color-ink-fg-dim);
+  --color-canvas: var(--color-canvas);
+  --color-canvas-raised: var(--color-canvas-raised);
+  --color-canvas-fg: var(--color-canvas-fg);
+  --color-canvas-fg-secondary: var(--color-canvas-fg-secondary);
+  --color-canvas-fg-dim: var(--color-canvas-fg-dim);
+  --color-brand: var(--color-brand);
+  --color-brand-deep: var(--color-brand-deep);
+  --color-brand-soft: var(--color-brand-soft);
+  --color-brand-line: var(--color-brand-line);
+  --color-success: var(--color-success);
+  --color-success-soft: var(--color-success-soft);
+  --color-attention: var(--color-attention);
+  --color-attention-soft: var(--color-attention-soft);
+  --font-sans: var(--font-geist);
+  --font-display: var(--font-bricolage);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible {
+  outline: 2px solid var(--color-brand-deep);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
