@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-type Register = "light" | "dark";
+type Register = "light" | "dark" | "brand";
 const registerClasses: Record<Register, string> = {
   light: "bg-canvas text-canvas-fg",
   dark: "bg-ink text-ink-fg",
+  brand: "bg-brand-deep text-white",
 };
 export function Section({
   children,

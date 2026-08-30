@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { testimonials } from "@/content/testimonials";
 export function TestimonialsSection() {
   return (
-    <Section register="light" className="bg-brand-soft/40">
+    <Section register="light" className="bg-brand-soft/40 pb-12 lg:pb-16">
       <Container>
         <Reveal>
           <Eyebrow>What our clients say</Eyebrow>

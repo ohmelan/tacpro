@@ -14,13 +14,13 @@ export const navLinks = [
 ];
 export const siteConfig = {
   name: "TAC",
-  fullName: "TAC Professionals India Pvt Ltd",
+  fullName: "TAC Professionals India LLP",
   email: "connect.tacpro@gmail.com",
   addresses: [
     {
       title: "Main Corporate Office",
       lines: [
-        "43/2684-A2, Suite #+++, First Floor",
+        "43/2684-A2, First Floor",
         "Kolathara Road, Rahiman Bazaar",
         "Kozhikode, Kerala, 673655"
       ]
@@ -28,7 +28,7 @@ export const siteConfig = {
     {
       title: "Other Branches",
       lines: [
-        "66/1150, Suite #----",
+        "66/1150",
         "Kalabhavan Road, Near Kochi Town Hall",
         "Kaloor, Ernakulam, 682018"
       ]

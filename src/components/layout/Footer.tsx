@@ -3,27 +3,42 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { navLinks, siteConfig } from "@/content/nav";
+import { PremiumDivider } from "@/components/ui/PremiumDivider";
+
 export function Footer() {
   return (
-    <footer className="border-brand-line bg-ink text-ink-fg border-t">
-      <Container className="py-16">
-        <div className="flex flex-col gap-12 md:flex-row md:justify-between">
+    <footer className="bg-brand-deep text-white">
+      <PremiumDivider />
+      <Container className="py-20">
+        <div className="flex flex-col gap-16 md:flex-row md:justify-between">
           <div className="max-w-sm">
-            <Image
-              src="/brand/tac-lockup-colored.webp"
-              alt={siteConfig.fullName}
-              width={800}
-              height={236}
-              className="h-8 w-auto"
-            />
-            <p className="text-ink-fg-secondary mt-3 text-sm">{siteConfig.fullName}</p>
-            <div className="mt-6 flex flex-col gap-6">
+            <div className="relative h-9 w-max">
+              {/* White Text Layer */}
+              <Image
+                src="/brand/tac-lockup-colored.webp"
+                alt={siteConfig.fullName}
+                width={800}
+                height={236}
+                className="h-9 w-auto brightness-0 invert"
+              />
+              {/* Colored Flower Layer (Clipped to left 30%) */}
+              <Image
+                src="/brand/tac-lockup-colored.webp"
+                alt=""
+                width={800}
+                height={236}
+                className="absolute inset-0 h-9 w-auto"
+                style={{ clipPath: "inset(0 70% 0 0)" }}
+              />
+            </div>
+            <p className="text-white/80 mt-5 text-sm leading-relaxed">{siteConfig.fullName}</p>
+            <div className="mt-10 flex flex-col gap-10">
               {siteConfig.addresses.map((address) => (
                 <div key={address.title}>
-                  <p className="text-ink-fg-dim text-xs font-semibold tracking-[0.1em] uppercase">
+                  <p className="font-[family-name:var(--font-display)] text-2xl font-medium text-brand-soft">
                     {address.title}
                   </p>
-                  <p className="text-ink-fg-secondary mt-1.5 text-sm leading-relaxed">
+                  <p className="text-white/80 mt-3 text-sm leading-relaxed">
                     {address.lines.map((line, i) => (
                       <span key={i}>
                         {line}
@@ -35,12 +50,12 @@ export function Footer() {
               ))}
             </div>
           </div>
-          <div className="flex flex-wrap gap-16">
+          <div className="flex flex-wrap gap-20">
             <nav aria-label="Footer">
-              <p className="text-ink-fg-dim text-xs font-semibold tracking-[0.18em] uppercase">
+              <p className="font-[family-name:var(--font-display)] text-2xl font-medium text-brand-soft">
                 Navigate
               </p>
-              <ul className="mt-4 flex flex-col gap-3">
+              <ul className="mt-6 flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     {link.items ? (
@@ -49,14 +64,14 @@ export function Footer() {
                           window.scrollTo({ top: 0, behavior: "smooth" });
                           window.dispatchEvent(new CustomEvent("open-nav-dropdown", { detail: { href: link.href } }));
                         }}
-                        className="text-ink-fg-secondary hover:text-ink-fg text-sm transition-colors text-left"
+                        className="text-white/80 hover:text-brand-soft text-sm transition-colors text-left"
                       >
                         {link.label}
                       </button>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-ink-fg-secondary hover:text-ink-fg text-sm transition-colors"
+                        className="text-white/80 hover:text-brand-soft text-sm transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -66,26 +81,26 @@ export function Footer() {
               </ul>
             </nav>
             <div>
-              <p className="text-ink-fg-dim text-xs font-semibold tracking-[0.18em] uppercase">
+              <p className="font-[family-name:var(--font-display)] text-2xl font-medium text-brand-soft">
                 Contact
               </p>
-              <ul className="mt-4 flex flex-col gap-4">
+              <ul className="mt-6 flex flex-col gap-6">
                 <li>
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="text-ink-fg-secondary hover:text-ink-fg text-sm transition-colors"
+                    className="text-white/80 hover:text-brand-soft text-sm transition-colors"
                   >
                     {siteConfig.email}
                   </a>
                 </li>
                 {siteConfig.contactNumbers.map((contact) => (
-                  <li key={contact.location} className="flex flex-col gap-0.5">
-                    <span className="text-ink-fg-dim text-[11px] font-semibold tracking-wider uppercase">
+                  <li key={contact.location} className="flex flex-col gap-1.5">
+                    <span className="text-white/50 text-[11px] font-semibold tracking-wider uppercase">
                       {contact.location}
                     </span>
                     <a
                       href={contact.href}
-                      className="text-ink-fg-secondary hover:text-ink-fg text-sm transition-colors"
+                      className="text-white/80 hover:text-brand-soft text-sm transition-colors"
                     >
                       {contact.number}
                     </a>
@@ -95,10 +110,14 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-brand-line text-ink-fg-dim mt-16 border-t pt-8 text-center text-xs">
-          <p>
-            © {new Date().getFullYear()} {siteConfig.fullName}
-          </p>
+        
+        <div className="relative mt-24 text-center text-xs">
+          <PremiumDivider className="absolute left-0 right-0 top-0" />
+          <div className="pt-16">
+            <p className="text-white/50">
+              © {new Date().getFullYear()} {siteConfig.fullName}
+            </p>
+          </div>
         </div>
       </Container>
     </footer>
