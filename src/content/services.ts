@@ -4,6 +4,7 @@ export type OfferingItem = string | {
   priceDetail?: string;
   features?: string[];
   notes?: string[];
+  packages?: PackageItem[];
 };
 
 export type PackageItem = {

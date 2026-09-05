@@ -92,10 +92,10 @@ export function Footer() {
                   ) : (
                     <>
                       <p className="text-white mt-3 text-sm leading-relaxed">
-                        {address.lines.map((line, i) => (
+                        {address.lines?.map((line, i) => (
                           <span key={i}>
                             {line}
-                            {i < address.lines.length - 1 && <br />}
+                            {i < (address.lines?.length || 0) - 1 && <br />}
                           </span>
                         ))}
                       </p>

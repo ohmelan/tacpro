@@ -148,7 +148,7 @@ export default function ContactPage() {
                         Corporate office
                       </p>
                       <p className="text-canvas-fg mt-1 text-base font-semibold leading-snug">
-                        {siteConfig.addresses[0].lines.map((line, i) => (
+                        {siteConfig.addresses[0].lines?.map((line, i) => (
                           <span key={i} className="block">
                             {line}
                           </span>
