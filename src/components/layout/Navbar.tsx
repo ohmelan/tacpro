@@ -37,7 +37,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                 e.preventDefault();
                 setDropdownOpen(dropdownOpen === i ? null : i);
               }}
-              className="text-canvas-fg-secondary hover:text-canvas-fg relative flex items-center gap-1.5 rounded-full px-4 py-2 font-[family-name:var(--font-display)] text-[15px] font-normal tracking-tight transition-colors"
+              className="text-canvas-fg-secondary hover:text-canvas-fg relative flex items-center gap-1.5 rounded-full px-4 py-2 font-[family-name:var(--font-display)] text-[18px] font-bold tracking-tight transition-colors"
             >
               {hovered === i && (
                 <motion.span
@@ -53,7 +53,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
             <Link
               href={link.href}
               onClick={onNavigate}
-              className="text-canvas-fg-secondary hover:text-canvas-fg relative flex items-center gap-1.5 rounded-full px-4 py-2 font-[family-name:var(--font-display)] text-[15px] font-normal tracking-tight transition-colors"
+              className="text-canvas-fg-secondary hover:text-canvas-fg relative flex items-center gap-1.5 rounded-full px-4 py-2 font-[family-name:var(--font-display)] text-[18px] font-bold tracking-tight transition-colors"
             >
               {hovered === i && (
                 <motion.span
@@ -80,7 +80,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
                       key={item.href}
                       href={item.href}
                       onClick={onNavigate}
-                      className="block rounded-lg px-4 py-2.5 text-[15px] text-canvas-fg-secondary hover:bg-brand-soft hover:text-canvas-fg transition-colors font-[family-name:var(--font-display)] font-normal"
+                      className="block rounded-lg px-4 py-2.5 text-[17px] text-canvas-fg-secondary hover:bg-brand-soft hover:text-canvas-fg transition-colors font-[family-name:var(--font-display)] font-normal"
                     >
                       {item.label}
                     </Link>
@@ -145,8 +145,8 @@ export function Navbar() {
           <NavLinks />
           <div className="flex items-center gap-3">
             <div className="hidden md:block">
-              <LinkButton href="/contact" variant="brand" className="!px-5 !py-2.5 !text-sm">
-                <span className="inline-flex items-center gap-1.5 font-[family-name:var(--font-display)] font-normal tracking-tight">
+              <LinkButton href="/contact" variant="brand" className="!px-5 !py-2.5 !text-[16px]">
+                <span className="inline-flex items-center gap-1.5 font-[family-name:var(--font-display)] font-bold tracking-tight">
                   Get in touch
                   <svg
                     viewBox="0 0 16 16"

@@ -6,10 +6,10 @@ import type {
 } from "react";
 import { cn } from "@/lib/utils";
 const inputBase =
-  "w-full rounded-xl border border-brand/25 bg-ink-raised/40 px-4 py-3 text-ink-fg placeholder:text-ink-fg-dim focus:outline-none focus:border-brand transition-colors duration-200";
+  "w-full rounded-xl border border-brand/25 bg-white/5 px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors duration-200";
 function Label({ htmlFor, children }: { htmlFor: string; children: ReactNode }) {
   return (
-    <label htmlFor={htmlFor} className="text-ink-fg-secondary text-sm font-semibold">
+    <label htmlFor={htmlFor} className="text-white/80 text-sm font-semibold tracking-wide">
       {children}
     </label>
   );
@@ -39,7 +39,7 @@ export function PhoneField({
       <div className="flex">
         <select
           name={`${props.name}_code`}
-          className="rounded-l-xl border border-brand/25 bg-ink-raised/40 px-3 py-3 text-ink-fg focus:outline-none focus:border-brand border-r-0 cursor-pointer transition-colors duration-200 text-sm"
+          className="rounded-l-xl border border-brand/25 bg-white/5 px-3 py-3 text-white focus:outline-none focus:border-brand border-r-0 cursor-pointer transition-colors duration-200 text-sm [&>option]:bg-brand-deep"
           defaultValue="+91"
         >
           <option value="+91">🇮🇳 +91</option>
@@ -50,7 +50,7 @@ export function PhoneField({
         </select>
         <input 
           id={id} 
-          className="w-full rounded-r-xl border border-brand/25 bg-ink-raised/40 px-4 py-3 text-ink-fg placeholder:text-ink-fg-dim focus:outline-none focus:border-brand transition-colors duration-200" 
+          className="w-full rounded-r-xl border border-brand/25 bg-white/5 px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-brand transition-colors duration-200" 
           {...props} 
         />
       </div>
@@ -80,7 +80,7 @@ export function SelectField({
   return (
     <div className={cn("flex flex-col gap-2", className)}>
       <Label htmlFor={id!}>{label}</Label>
-      <select id={id} className={cn(inputBase, "cursor-pointer")} {...props}>
+      <select id={id} className={cn(inputBase, "cursor-pointer [&>option]:bg-brand-deep")} {...props}>
         {children}
       </select>
     </div>
@@ -100,7 +100,7 @@ export function CheckboxField({
         className="accent-brand mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded-md"
         {...props}
       />
-      <span className="text-ink-fg-dim text-sm leading-relaxed">{label}</span>
+      <span className="text-white/70 text-sm leading-relaxed">{label}</span>
     </label>
   );
 }

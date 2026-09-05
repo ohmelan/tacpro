@@ -5,7 +5,7 @@ export const navLinks = [
     label: "Virtual Workspaces", 
     href: "/virtual-workspaces",
     items: [
-      { label: "Kozhikode", href: "/virtual-workspaces/kozhikode" },
+      { label: "Calicut", href: "/virtual-workspaces/calicut" },
       { label: "Kochi", href: "/virtual-workspaces/kochi" },
       { label: "Pathanamthitta", href: "/virtual-workspaces/pathanamthitta" },
     ]
@@ -18,19 +18,35 @@ export const siteConfig = {
   email: "connect.tacpro@gmail.com",
   addresses: [
     {
-      title: "Main Corporate Office",
+      title: "Corporate Office",
       lines: [
-        "43/2684-A2, First Floor",
-        "Kolathara Road, Rahiman Bazaar",
-        "Kozhikode, Kerala, 673655"
-      ]
+        "2nd Floor, Door No: 66/1150",
+        "Kalabhavan Road, Near Kochi Town Hall",
+        "North Kaloor, Ernakulam, 682018"
+      ],
+      email: "tacauditskochi@gmail.com"
     },
     {
-      title: "Other Branches",
-      lines: [
-        "66/1150",
-        "Kalabhavan Road, Near Kochi Town Hall",
-        "Kaloor, Ernakulam, 682018"
+      title: "Branches",
+      locations: [
+        {
+          name: "Calicut",
+          lines: [
+            "43/2684-A2, First Floor",
+            "Kolathara Road, Rahiman Bazaar",
+            "Calicut, Kerala, 673655"
+          ],
+          email: "tacauditsclt@gmail.com"
+        },
+        {
+          name: "Pandalam",
+          lines: [
+            "7/49A, First Floor, Al Bushra Complex",
+            "Near Central Jn, Pandalam P.O",
+            "Pathanamthitta, Kerala, 689501"
+          ],
+          email: "tacaudits@gmail.com"
+        }
       ]
     }
   ],

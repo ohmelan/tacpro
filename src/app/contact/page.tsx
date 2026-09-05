@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with TAC — TAC Professionals.",
 };
-const mapQuery = encodeURIComponent("TAC Professionals, 43/2684-A2, Kolathara Road, Kozhikode, Kerala");
+const mapQuery = encodeURIComponent("TAC Professionals, Door No: 66/1150, Kalabhavan Road, Near Kochi Town Hall, North Kaloor, Ernakulam, Kerala 682018");
 const mapEmbedSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
 function WhatsAppIcon() {
   return (
@@ -104,10 +104,10 @@ export default function ContactPage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
             <Reveal>
-              <div className="border-brand-line bg-ink relative overflow-hidden rounded-3xl border p-10">
+              <div className="border-brand-line bg-brand-deep relative overflow-hidden rounded-3xl border p-10">
                 <span
                   aria-hidden
-                  className="bg-brand/10 pointer-events-none absolute -top-20 -left-20 h-56 w-56 rounded-full blur-3xl"
+                  className="bg-brand/15 pointer-events-none absolute -top-20 -left-20 h-56 w-56 rounded-full blur-3xl"
                 />
                 <div className="relative">
                   <ContactForm />

@@ -5,6 +5,10 @@ import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { Reveal, RevealGroup } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
+import { 
+  ShoppingCart, Utensils, Monitor, Factory, 
+  HeartPulse, Building2, Briefcase, Globe2 
+} from "lucide-react";
 import { values } from "@/content/values";
 export const metadata: Metadata = {
   title: "About",
@@ -16,6 +20,41 @@ const differentiators = [
   "Industry-focused advisory support",
   "Timely filings & proactive compliance tracking",
   "Long-term client relationship focus",
+];
+
+const industries = [
+  {
+    name: "Retail & E-commerce",
+    icon: <ShoppingCart className="h-6 w-6" strokeWidth={1.5} />
+  },
+  {
+    name: "Food & Hospitality",
+    icon: <Utensils className="h-6 w-6" strokeWidth={1.5} />
+  },
+  {
+    name: "IT & Technology",
+    icon: <Monitor className="h-6 w-6" strokeWidth={1.5} />
+  },
+  {
+    name: "Manufacturing",
+    icon: <Factory className="h-6 w-6" strokeWidth={1.5} />
+  },
+  {
+    name: "Healthcare",
+    icon: <HeartPulse className="h-6 w-6" strokeWidth={1.5} />
+  },
+  {
+    name: "Construction & Real Estate",
+    icon: <Building2 className="h-6 w-6" strokeWidth={1.5} />
+  },
+  {
+    name: "Professional Services",
+    icon: <Briefcase className="h-6 w-6" strokeWidth={1.5} />
+  },
+  {
+    name: "Trading & Export",
+    icon: <Globe2 className="h-6 w-6" strokeWidth={1.5} />
+  }
 ];
 function CheckIcon() {
   return (
@@ -69,7 +108,7 @@ export default function AboutPage() {
           </Reveal>
         </Container>
       </Section>
-      <Section register="dark">
+      <Section register="brand">
         <Container>
           <Reveal>
             <Eyebrow className="!text-brand">Our purpose</Eyebrow>
@@ -78,21 +117,21 @@ export default function AboutPage() {
             </h2>
           </Reveal>
           <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-2">
-            <div className="border-brand-line/25 bg-ink-raised/40 rounded-3xl border p-8">
-              <p className="text-ink-fg-dim text-xs font-semibold tracking-[0.18em] uppercase">
+            <div className="border-brand-line/25 bg-white/5 rounded-3xl border p-8">
+              <p className="text-white/70 text-xs font-semibold tracking-[0.18em] uppercase">
                 Our mission
               </p>
-              <p className="mt-4 text-lg">
+              <p className="mt-4 text-lg text-white">
                 To simplify complex financial, taxation, and compliance requirements so our clients
                 can focus on growth, innovation, and operational excellence while we manage their
                 regulatory responsibilities.
               </p>
             </div>
-            <div className="border-brand-line/25 bg-ink-raised/40 rounded-3xl border p-8">
-              <p className="text-ink-fg-dim text-xs font-semibold tracking-[0.18em] uppercase">
+            <div className="border-brand-line/25 bg-white/5 rounded-3xl border p-8">
+              <p className="text-white/70 text-xs font-semibold tracking-[0.18em] uppercase">
                 Our vision
               </p>
-              <p className="mt-4 text-lg">
+              <p className="mt-4 text-lg text-white">
                 To be a trusted audit and compliance partner recognized for integrity, accuracy, and
                 strategic financial guidance across industries and regions.
               </p>
@@ -115,6 +154,30 @@ export default function AboutPage() {
                   <CheckIcon />
                   <span className="text-canvas-fg text-base font-medium">{item}</span>
                 </Card>
+              </Reveal>
+            ))}
+          </RevealGroup>
+        </Container>
+      </Section>
+      <Section register="light" className="!pt-0">
+        <Container>
+          <Reveal>
+            <Eyebrow>Industries We Serve</Eyebrow>
+            <h2 className="mt-4 font-[family-name:var(--font-display)] text-[clamp(1.75rem,3vw,2.5rem)] font-bold tracking-tight">
+              We Support Businesses Across Industries
+            </h2>
+          </Reveal>
+          <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {industries.map((industry) => (
+              <Reveal key={industry.name}>
+                <div className="group border-brand-line bg-canvas-raised flex h-full flex-col items-start gap-5 rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl hover:shadow-brand/5">
+                  <div className="bg-brand-soft text-brand-deep flex h-14 w-14 items-center justify-center rounded-2xl transition-colors duration-300 group-hover:bg-brand group-hover:text-ink">
+                    {industry.icon}
+                  </div>
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-canvas-fg">
+                    {industry.name}
+                  </h3>
+                </div>
               </Reveal>
             ))}
           </RevealGroup>

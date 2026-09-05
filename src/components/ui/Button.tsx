@@ -3,23 +3,26 @@ import { useState, type MouseEvent as ReactMouseEvent, type ReactNode } from "re
 import { motion, useMotionValue, useSpring, type HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { pressTransition } from "@/lib/motion";
-type Variant = "brand" | "outline" | "ghost";
+type Variant = "brand" | "outline" | "ghost" | "whatsapp";
 const base =
   "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-4 text-[15px] font-semibold tracking-tight";
 const variantClasses: Record<Variant, string> = {
   brand: "bg-brand text-ink",
   outline: "border-[1.5px] border-ink text-ink bg-transparent",
   ghost: "border border-brand-line text-current bg-transparent",
+  whatsapp: "bg-brand text-ink",
 };
 const fillClasses: Record<Variant, string> = {
-  brand: "bg-ink",
-  outline: "bg-ink",
+  brand: "bg-brand-deep",
+  outline: "bg-brand-deep",
   ghost: "bg-brand-soft",
+  whatsapp: "bg-[#25D366]",
 };
 const textColorVariants: Record<Variant, { rest: string; hover: string }> = {
   brand: { rest: "#12130F", hover: "#D5AF54" },
   outline: { rest: "#12130F", hover: "#FAFAF7" },
   ghost: { rest: "currentColor", hover: "currentColor" },
+  whatsapp: { rest: "#12130F", hover: "#FFFFFF" },
 };
 function useMagnetic() {
   const x = useMotionValue(0);

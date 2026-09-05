@@ -8,8 +8,8 @@ import { Section } from "@/components/ui/Section";
 import { LinkButton } from "@/components/ui/Button";
 import { siteConfig } from "@/content/nav";
 export const metadata: Metadata = {
-  title: "Kozhikode Virtual Workspace",
-  description: "Professional virtual office space and business address in Kozhikode.",
+  title: "Calicut Virtual Workspace",
+  description: "Professional virtual office space and business address in Calicut.",
 };
 const features = [
   { title: "Free Udyam Registration", desc: "Hassle-free MSME registration." },
@@ -34,8 +34,8 @@ function CheckIcon() {
     </svg>
   );
 }
-export default function KozhikodeWorkspacePage() {
-  const mapLink = "https://g.co/kgs/Ko76Ajc";
+export default function CalicutWorkspacePage() {
+  const mapLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("TAC Professionals, Kolathara Road, Rahiman Bazaar, Calicut, Kerala, 673655");
   return (
     <main className="flex-1">
       <Section register="light" className="pt-40 !pb-12">
@@ -43,10 +43,10 @@ export default function KozhikodeWorkspacePage() {
           <Reveal>
             <Eyebrow>Location</Eyebrow>
             <h1 className="mt-4 max-w-3xl font-[family-name:var(--font-display)] text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.05] font-bold tracking-tight">
-              Kozhikode <span className="text-brand-deep">Virtual Office</span>
+              Calicut <span className="text-brand-deep">Virtual Office</span>
             </h1>
             <p className="text-canvas-fg-secondary mt-6 max-w-xl text-lg">
-              Establish a professional business presence in the heart of Kozhikode. Get a premium corporate address, meeting spaces, and comprehensive registration support.
+              Establish a professional business presence in the heart of Calicut. Get a premium corporate address, meeting spaces, and comprehensive registration support.
             </p>
           </Reveal>
         </Container>
@@ -58,8 +58,8 @@ export default function KozhikodeWorkspacePage() {
             <Reveal className="h-full w-full">
               <div className="relative h-full min-h-[400px] w-full overflow-hidden rounded-3xl border border-brand-line/20 bg-canvas-raised">
                 <Image
-                  src="/workspaces/kozhikode/office-1.png"
-                  alt="Kozhikode Office Space"
+                  src="/workspaces/calicut/office-1.png"
+                  alt="Calicut Office Space"
                   fill
                   className="object-cover"
                 />
@@ -82,7 +82,7 @@ export default function KozhikodeWorkspacePage() {
                       TAC Professionals<br />
                       43/2684-A2, Suite #+++, First Floor,<br />
                       Kolathara Road, Rahiman Bazaar,<br />
-                      Kozhikode, Kerala, 673655
+                      Calicut, Kerala, 673655
                     </p>
                     <a 
                       href={mapLink}
@@ -97,7 +97,7 @@ export default function KozhikodeWorkspacePage() {
                 </div>
                 <div className="mt-10">
                   <LinkButton 
-                    href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent("Hi! I'd like to book the Kozhikode Virtual Office space.")}`} 
+                    href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent("Hi! I'd like to book the Calicut Virtual Office space.")}`} 
                     className="w-full"
                   >
                     Enquire & Book Now
@@ -110,8 +110,8 @@ export default function KozhikodeWorkspacePage() {
               <Reveal>
                 <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-brand-line/20 bg-canvas-raised">
                   <Image
-                    src="/workspaces/kozhikode/office-2.png"
-                    alt="Kozhikode Office Space Desks"
+                    src="/workspaces/calicut/office-2.png"
+                    alt="Calicut Office Space Desks"
                     fill
                     className="object-cover"
                   />
@@ -120,8 +120,8 @@ export default function KozhikodeWorkspacePage() {
               <Reveal>
                 <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-brand-line/20 bg-canvas-raised">
                   <Image
-                    src="/workspaces/kozhikode/office-3.png"
-                    alt="Kozhikode Office Space Wide"
+                    src="/workspaces/calicut/office-3.png"
+                    alt="Calicut Office Space Wide"
                     fill
                     className="object-cover"
                   />

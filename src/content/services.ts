@@ -1,10 +1,29 @@
+export type OfferingItem = string | {
+  name: string;
+  price?: string;
+  priceDetail?: string;
+  features?: string[];
+  notes?: string[];
+};
+
+export type PackageItem = {
+  badge: string;
+  title: string;
+  subtitle: string;
+  bestFor: string;
+  price: string;
+  period: string;
+  features: string[];
+};
+
 export type Service = {
   slug: string;
   number: string;
   title: string;
   summary: string;
   intro: string;
-  offerings: string[];
+  offerings: OfferingItem[];
+  packages?: PackageItem[];
 };
 export const services: Service[] = [
   {
@@ -16,8 +35,41 @@ export const services: Service[] = [
     intro:
       "Starting or restructuring a business means paperwork that has to be right the first time. We handle the registrations end to end, so you're trading legally from day one.",
     offerings: [
-      "Private Limited Incorporation",
-      "LLP Incorporation",
+      {
+        name: "Private Limited Registration",
+        price: "₹12,999",
+        priceDetail: "2 Partners",
+        features: [
+          "MOA & AOA",
+          "GST Registration",
+          "PAN & TAN",
+          "Digital Signature Certificate (DSC)",
+          "Director Identification Number (DIN)",
+          "Incorporation Certificate",
+          "Delivery Time: 8 to 20 working days"
+        ],
+        notes: [
+          "GST Registration will be complimentary only if upcoming return filing is with us."
+        ]
+      },
+      {
+        name: "LLP Registration",
+        price: "₹9,999",
+        priceDetail: "2 Fresh Partners",
+        features: [
+          "Stamp paper of ₹1,000 included",
+          "GST Registration",
+          "Deed Creation",
+          "PAN & TAN",
+          "Digital Signature Certificate (DSC)",
+          "Director Identification Number (DIN)",
+          "Incorporation Certificate",
+          "Delivery Time: 8 to 15 working days"
+        ],
+        notes: [
+          "GST Registration is complimentary only if upcoming three return filings are with us."
+        ]
+      },
       "Partnership Registration",
       "Proprietorship Registration",
       "Digital Signature Certificate (DSC)",
@@ -35,8 +87,96 @@ export const services: Service[] = [
       "Income Tax Returns (ITR Filing)",
       "TDS & TCS Filing",
       "Startup India Exemption Filing (Sec 80 IAC Filing)",
-      "GST Registration",
-      "GST Return Filing",
+      {
+        name: "GST Registration",
+        price: "₹999",
+        priceDetail: "Starting price"
+      },
+      {
+        name: "GST Return Filing",
+        packages: [
+          {
+            badge: "GST PACKAGE 1",
+            title: "Package 1",
+            subtitle: "Basic Returns",
+            bestFor: "Small volume & NIL filers",
+            price: "₹500",
+            period: "/ month",
+            features: [
+              "B2C Sales upto 1 Lakh",
+              "OR",
+              "NIL Filing Return",
+              "OR",
+              "B2B Sales upto 3 Bills"
+            ]
+          },
+          {
+            badge: "GST PACKAGE 2",
+            title: "Package 2",
+            subtitle: "Moderate Returns",
+            bestFor: "Growing retail & small B2B",
+            price: "₹1,000",
+            period: "/ month",
+            features: [
+              "B2C Sales upto 5 Lakhs",
+              "OR",
+              "B2B Sales upto 15 Bills"
+            ]
+          },
+          {
+            badge: "GST PACKAGE 3",
+            title: "Package 3",
+            subtitle: "Advanced Returns",
+            bestFor: "High retail & moderate B2B",
+            price: "₹2,000",
+            period: "/ month",
+            features: [
+              "B2C Sales upto 10 Lakhs",
+              "OR",
+              "B2B Sales upto 30 Bills"
+            ]
+          },
+          {
+            badge: "GROWTH",
+            title: "Standard Package 4",
+            subtitle: "Growth Support",
+            bestFor: "Growing Businesses with Moderate Transactions",
+            price: "₹3,000",
+            period: "/ month",
+            features: [
+              "Complete GST Filing",
+              "Detailed Summaries",
+              "Priority Support"
+            ]
+          },
+          {
+            badge: "PREMIUM",
+            title: "Premium Package 5",
+            subtitle: "Full Compliance",
+            bestFor: "Established Businesses, High Volume & Compliance-Focused",
+            price: "₹5,000",
+            period: "/ month",
+            features: [
+              "End-to-End GST Filings",
+              "Full Purchase Verification (ITC)",
+              "Priority Doubt Clearing"
+            ]
+          },
+          {
+            badge: "ENTERPRISE",
+            title: "Enterprise Package 6",
+            subtitle: "Complex Operations",
+            bestFor: "Large Enterprises with Complex Operations",
+            price: "₹10,000",
+            period: "/ month",
+            features: [
+              "Customized Compliance Solutions",
+              "Dedicated Account Manager",
+              "Strategic Tax Planning"
+            ]
+          }
+        ]
+      },
       "GST Refund Filing",
       "GST LUT Filing",
       "Appeal Cases & Notices",
@@ -51,7 +191,61 @@ export const services: Service[] = [
     intro:
       "Books that are current and accurate are the foundation everything else depends on — filings, audits, and decisions alike. We keep yours that way, year-round.",
     offerings: [
-      "Accounting & Bookkeeping",
+      {
+        name: "Accounting & Bookkeeping",
+        packages: [
+          {
+            badge: "STARTER",
+            title: "Basic Package",
+            subtitle: "Starter Compliance",
+            bestFor: "Small businesses, startups & low transaction volume",
+            price: "₹3,000",
+            period: "/ month",
+            features: [
+              "Accounting & Bookkeeping (basic entries)",
+              "Monthly Sales & Purchase Summary Reports",
+              "GST Filing — GSTR-1 & 3B",
+              "Purchase Cross Check (basic level)",
+              "Bank Reconciliation (monthly)",
+              "Doubt Clearing — limited via WhatsApp / Call"
+            ]
+          },
+          {
+            badge: "GROWTH",
+            title: "Standard Package",
+            subtitle: "Growth Support",
+            bestFor: "Growing businesses with moderate transactions",
+            price: "₹5,000",
+            period: "/ month",
+            features: [
+              "Complete Accounting & Bookkeeping",
+              "Detailed Sales & Purchase Reports",
+              "GST Filing + Purchase Reconciliation (advanced)",
+              "Bank Reconciliation (monthly)",
+              "2 Visits per Month (optional)",
+              "Priority Doubt Clearing — Call & WhatsApp"
+            ]
+          },
+          {
+            badge: "PREMIUM",
+            title: "Premium Package",
+            subtitle: "Full Business Control",
+            bestFor: "Established businesses, high volume & compliance-focused clients",
+            price: "₹10,000",
+            period: "/ month",
+            features: [
+              "End-to-End Accounting & Bookkeeping",
+              "Advanced Sales, Purchase & Profitability Reports",
+              "GST Filing + Full Purchase Cross Verification (ITC optimisation)",
+              "Bank Reconciliation — weekly / real-time optional",
+              "TDS Filing + Advisory",
+              "3 Visits per Month",
+              "Unlimited Priority Doubt Clearing",
+              "Monthly Financial Review Meeting"
+            ]
+          }
+        ]
+      },
       "Financial Statements Preparation",
       "Budgeting & Cash Flow Management",
       "Financial Management",
@@ -73,7 +267,11 @@ export const services: Service[] = [
       "FSSAI Registration",
       "Digital Signature Certificate (DSC)",
       "Import & Export Code (IEC)",
-      "Trademark Registration",
+      {
+        name: "Trademark Registration",
+        price: "₹6,400",
+        priceDetail: "Including gov and professional fee"
+      },
       "ISO Certification",
       "KSWIFT Registration",
       "APEDA Registration",

@@ -24,7 +24,7 @@ export function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
-        variant="brand"
+        variant="whatsapp"
         className="!px-6 !py-3.5 !text-sm"
       >
         <span className="inline-flex items-center gap-2 leading-none">
