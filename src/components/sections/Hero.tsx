@@ -17,7 +17,7 @@ function RoomVideoBackground() {
         playsInline
         preload="auto"
       />
-      <div className="from-canvas via-canvas/35 pointer-events-none absolute inset-0 bg-gradient-to-r to-transparent" />
+      <div className="from-canvas via-canvas/10 pointer-events-none absolute inset-0 bg-gradient-to-r to-transparent" />
     </div>
   );
 }
