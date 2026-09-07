@@ -10,7 +10,6 @@ function RoomVideoBackground() {
       <video
         className="h-full w-full object-cover"
         src="/scene/corner-office.mp4"
-        poster="/scene/corner-office-poster.jpg"
         autoPlay
         muted
         loop
